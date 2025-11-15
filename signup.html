@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up Page</title>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 95vh;
+            background: linear-gradient(to left bottom,#2d90c1,#dc4487);
+        }
+
+        * {
+            /* font-size: 20px; */
+        }
+
+        .login {
+            /* margin: 200px auto; */
+            width: 500px;
+            border-radius: 20px;
+            text-align: center;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border: 2px solid black;
+            /* padding: 20px; */
+            position: relative;
+        }
+
+        img {
+            width: 50px;
+            height: 50px;
+        }
+
+        input {
+            padding: 15px;
+            padding-right: 150px;
+            margin: 10px;
+            border-radius: 10px;
+            width: 60%;
+            border: 1px solid rgba(77, 7, 7, 0.404);
+
+        }
+
+        button {
+            color: rgb(227, 213, 213);
+            background-color: black;
+            padding: 15px 40px;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: 0.5s;
+
+            &&:hover {
+
+                background-color: white;
+                color: rgb(217, 25, 182);
+            }
+        }
+
+        .last {
+            /* padding: 30px; */
+        }
+
+        p {
+            opacity: 0.8;
+        }
+
+        a {
+            color: black;
+        }
+
+        .header {
+            display: flex;
+            width: 55%;
+            justify-content: space-between;
+            align-items: center;
+            /* font-size:30px !important; */
+        }
+
+        .headerh2 {
+            font-size: 30px;
+        }
+
+        #lable,
+        .p {
+            font-size: 16px;
+            color: red;
+            text-align: left !important;
+            /* position: relative;
+            left: -150px;
+            top: 10px; */
+
+
+        }
+
+        .lable {
+            text-align: left;
+            padding-inline: 22px;
+        }
+
+        .passwordicon {
+            position: relative;
+            width: 100%;
+        }
+
+        .iconimg {
+            position: absolute;
+            right: 30px;
+            top: 25px;
+            width: 25px;
+            height: 25px;
+            cursor: pointer;
+        }
+
+        @media screen and (width < 500px) {
+            *{
+                font-size: small;
+            }
+            .login {
+                width: 80vw;
+            }
+
+            input {
+                padding-right: 30vw;
+
+            }
+
+            .headerimg {
+
+                width: 50px;
+                height: 50px;
+
+            }
+
+            .headerh2 {
+                font-size: 45px;
+            }
+
+            /* h2{
+            font-size: 14px;
+        } */
+        }
+
+        .header {
+            display: flex;
+            width: 55%;
+            justify-content: center;
+            align-items: center;
+            /* font-size: 30px !important; */
+        }
+    </style>
+</head>
+
+<body>
+    <form id="submit">
+        <div class="login">
+            <div class="header">
+                <h1 class="headerh2" style="font-size: 35px;">SafeScape</h1>
+                <!-- <img class="headerimg" src="ma.png" alt="" width="100px" height="100px"> -->
+            </div>
+            <h2>Let's get Started!</h2>
+            <div class="input">
+                <div class="lable">
+                    <label for="isloggedin" id="lable" class="p" style="text-align: left;"></label>
+                </div>
+                <input type="text" name="" id="isloggedin" placeholder="Enter your User Name" required
+                    onkeyup="isuser()">
+
+                <input type="email" name="" id="email" placeholder="Enter your email" required>
+                <div class="lable">
+                    <label for="password" id="passwordlable" class="p"></label>
+                </div>
+                <div class="passwordicon">
+                    <input type="password" name="password" placeholder="Enter Your password" required
+                        onkeyup="passwordvalidator(password)" onkeyup="islefta()" id="isright">
+                    <img src="eye.png" alt="" class="iconimg" onclick="password1()" id="eye1.png">
+                </div>
+                <div class="lable">
+                    <label for="password2" id="passwordlable2" class="p"></label>
+                </div>
+                <div class="passwordicon">
+                    <!-- <input type="password" name="password2" placeholder="Confirm Your password" id="isleft"  > -->
+                    <input type="password" name="password2" placeholder="Confirm Your password" id="isleft"
+                        onkeyup="islefta()" required>
+                    <img src="eye.png" alt="" class="iconimg" id="eye.png" onclick="password3()">
+                </div>
+            </div>
+            <button onclick="send(Event)" id="submitbutton">Sign Up to SafeScape</button>
+            <div class="last" required>
+                <p>
+                    Already a User?
+                    <a href="login.html">Login</a>
+                </p>
+                <a href="term.html">Forgot your password?</a>
+            </div>
+            <p>
+                By continuing you agree to SafeScape's <a href="term.html">terms</a> and acknowledge you've read our
+                <a href="term.html">Privacy Policy</a>
+            </p>
+        </div>
+    </form>
+    <script src="signup.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+
+</body>
+
+</html>
+
+

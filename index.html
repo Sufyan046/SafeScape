@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crime Search</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rowdies:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- <h1>Crime Data Search</h1> -->
+    <div class="container">
+        <div>
+            <div id="temp">
+                <h2>Please Enter a location and click on search</h2>
+            </div>
+            <canvas id="myChart"></canvas>
+        </div>
+        <div class="search-box">
+        <div class="search-section">
+                <label for="location">Location</label>
+                <!-- <input type="text" id="location" placeholder="Enter location" onkeyup="destroy()"> -->
+                <input type="text" list="indianCities" placeholder="Enter Here" / id="location" onkeyup="onkey()">
+                <datalist id="indianCities">
+                    <option value="Delhi"></option>
+                    <option value="Mumbai"></option>
+                    <option value="Kolkata"></option>
+                    <option value="Chennai"></option>
+                    <option value="Bengaluru"></option>
+                    <option value="Hyderabad"></option>
+                    <option value="Ahmedabad"></option>
+                    <option value="Pune"></option>
+                    <option value="Surat"></option>
+                    <option value="Jaipur"></option>
+                    <option value="Lucknow"></option>
+                    <option value="Kanpur"></option>
+                    <option value="Nagpur"></option>
+                    <option value="Indore"></option>
+                    <option value="Chandigarh"></option>
+                    <option value="Bhopal"></option>
+                    <option value="Patna"></option>
+                    <option value="Vadodara"></option>
+                    <option value="Visakhapatnam"></option>
+                    <option value="Nashik"></option>
+                    <option value="Agra"></option>
+                    <option value="Meerut"></option>
+                    <option value="Faridabad"></option>
+                    <option value="Rajkot"></option>
+                    <option value="Ludhiana"></option>
+                    <option value="Coimbatore"></option>
+                    <option value="Madurai"></option>
+                    <option value="Noida"></option>
+                    <option value="Kochi"></option>
+                    <option value="Vijayawada"></option>
+                    <option value="Mysuru"></option>
+                    <option value="Jammu"></option>
+                    <option value="Guwahati"></option>
+                    <option value="Aurangabad"></option>
+                    <option value="Dhanbad"></option>
+                    <option value="Ranchi"></option>
+                    <option value="Jabalpur"></option>
+                    <option value="Dehradun"></option>
+                    <option value="Udaipur"></option>
+                    <option value="Bhubaneswar"></option>
+                    <option value="Belagavi"></option>
+                    <option value="Haridwar"></option>
+                </datalist>
+            </div>
+            <div class="search-section">
+                <label for="selection">Selection</label>
+                <select name="" id="CrimeType">
+
+                    <option value="Theft">Theft</option>
+                    <option value="Robbery">Robbery</option>
+                    <option value="Assault">Assault</option>
+
+                    <option value="Murder">Murder</option>
+                    <option value="Burglary">Burglary</option>
+                    <option value="Fraud">Fraud</option>
+                    <option value="Kidnapping">Kidnapping</option>
+                    <option value="Domestic Violence">Domestic Violence</option>
+                    <option value="Cyber Crime">Cyber Crime</option>
+                    <option value="Drug Abuse">Drug Abuse</option>
+                </select>
+            </div>
+            <div class="search-section">
+                <label for="ChartType">Chart Type</label>
+                <select name="ChartType" id="type1" onchange="type2()">
+                    <option value="bar">bar</option>
+                    <option value="doughnut">pie</option>
+                    <option value="radar">radio</option>
+                    <option value="line">line</option>
+                </select>
+            </div>
+        </div>
+        <div class="search-buttons">
+            <button class="search-btn" onclick="main()" id="search">Search</button>
+        </div>
+    </div>
+    <div class="howtouse funfact">
+        <h1>How to Use SAFESCAPE</h1>
+        <ol>
+            <li>Select a city from the dropdown menu or type manually.</li>
+            <li>Choose the crime type you want to view.</li>
+            <li>Select the chart type from the dropdown menu (Bar, Line, Pie, etc.).</li>
+            <li>Click "Search" to view the crime statistics.</li>
+            <!-- <li>Analyze the displayed crime data and charts.</li> -->
+        </ol>
+    </div>
+
+    <div id="pie">
+        <div id="temp2">
+            <h2>Pie Chart will appear here</h2>
+        </div>
+        <canvas id="chart2"></canvas>
+    </div>
+    <div class="list">
+        <ul id="ul">
+            <h2>City List will appear Here</h2>
+            <!-- <li><span>Name</span><span>Count</span></li>
+        <li><span>Name</span><span>Count</span></li>
+        <li><span>Name</span><span>Count</span></li>
+        <li><span>Name</span><span>Count</span></li> -->
+        </ul>
+    </div>
+    <div class="othercities" popover id="citiestoselect">
+        <div class="login">
+            <h1>Select Other Cities of the Charts</h1>
+            <input type="text" id="othercities1" list="indianCities" placeholder="Select First City"><input type="text" id="othercities2" list="indianCities" placeholder="Select Second City"><input type="text"
+            id="othercities3" list="indianCities" placeholder="Select Third City"><input type="text" id="othercities4" list="indianCities" placeholder="Select Fourth City"><input type="text" id="othercities5" list="indianCities" placeholder="Select Fifth City">
+        </div>
+    </div>
+    <button popovertarget="citiestoselect" class="popbutton">Select Other Cities</button>
+    <div class="total">
+        <h2>SafeScape-Crime Insights And Analytics</h2>
+        <div>Harnessing data and technology to prevent crime, ensuring safer cities for everyone.</div>
+        <!-- <h4>members name</h4> -->
+        <!-- <ol>
+            <li>Ayyan</li>
+            <li>Nouman</li>
+            <li>xyz</li>
+            <li>xyz</li>
+        </ol> -->
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script copy.js"></script>
+</body>
+
+</html>

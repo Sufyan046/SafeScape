@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center; 
+            height: 95vh;
+            background: linear-gradient(to left bottom,#2d90c1,#dc4487);
+
+        }
+
+        * {
+            /* font-size: 20px; */
+        }
+
+        .login {
+            /* margin: 200px auto; */
+            width: 500px;
+            border-radius: 20px;
+            text-align: center;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border: 2px solid black;
+            /* padding: 20px; */
+            position: relative;
+            height: 90vh;
+        }
+
+        img {
+            width: 50px;
+            height: 50px;
+        }
+
+        input {
+            padding: 20px;
+            padding-right: 150px;
+            margin: 10px;
+            width: 60%;
+            border-radius: 10px;
+            border: 1px solid rgba(128, 128, 128, 0.404);
+        }
+
+        button {
+            color: white;
+            background-color: rgb(247, 247, 245);
+            padding: 15px 40px;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: 0.5s;
+
+            &&:hover {
+
+                background-color: white;
+                color: rgb(251, 180, 180);
+            }
+        }
+
+        .last {
+            /* padding: 30px; */
+        }
+
+        p {
+            opacity: 0.8;
+        }
+
+        a {
+            color: black;
+        }
+
+        .header {
+            display: flex;
+            width: 55%;
+            justify-content: space-between;
+            align-items: center;
+            /* font-size:30px !important; */
+        }
+
+        .headerh2 {
+            font-size: 30px;
+        }
+
+        .lable {
+            text-align: left;
+            padding-inline: 22px;
+        }
+
+        .passwordicon {
+            position: relative;
+            width: 100%;
+        }
+
+        .iconimg {
+            position: absolute;
+            right: 30px;
+            top: 30px;
+            width: 25px;
+            height: 25px;
+            cursor: pointer;
+        }
+
+        #lable,
+        .p {
+            font-size: 16px;
+            color: red;
+            text-align: left !important;
+            /* position: relative;
+            left: -150px;
+            top: 10px; */
+
+
+        }
+
+        @media screen and (width < 500px) {
+            .login {
+                width: 80vw;
+            }
+
+            input {
+                padding-right: 0px;
+
+            }
+            .headerimg {
+            
+            width: 50px;
+            height: 50px;
+            
+        }
+        .headerh2 {
+            font-size: 25px;
+        }
+       
+        }
+        .header {
+    display: flex;
+    width: 55%;
+    justify-content: center;
+    align-items: center;
+}
+    </style>
+
+</head>
+
+<body>
+    <form id="submit">
+        <div class="login">
+            <div class="header">
+                <h2 class="headerh2" style="font-size: 35px;">SafeScape</h2>
+            </div>
+            <h2>Welcome Back!</h2>
+            <div class="input">
+                <input type="text" name="" id="username" placeholder="Enter your User Name" required>
+                <input type="email" name="" id="email" placeholder="Enter your email" required>
+                <div class="passwordicon">
+                    <div class="lable">
+                        <label for="password" id="passwordlable2" class="p"></label>
+                    </div>
+                    <input type="password" name="password" id="password" placeholder="Enter Your password" required>
+                    <!-- <button onclick="password1()">paas</button> -->
+                    <img src="view.png" alt="" class="iconimg" onclick="password1()" id="eye.png">
+                </div>
+
+            </div>
+            <button onclick="login()" id="submit">Login to SafeScape</button>
+            <div class="last">
+                <p>
+                    Not a member?
+                    <a href="signup.html">Sign Up</a>
+                </p>
+                <a href="term.html">Forgot your password?</a>
+            </div>
+            <p>
+                By continuing you agree to SafeScape's <a href="term.html">terms</a> and acknowledge you've read our
+                <a href="term.html">Privacy Policy</a>
+            </p>
+        </div>
+    </form>
+    <script src="login.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+</body>
+
+</html>
